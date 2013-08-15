@@ -191,7 +191,7 @@ textarea {
 .button {
   height: 2em;
   width: auto;
-  border: none;
+  border: 0.1em solid grey;
   background-color: #EDC951;
   border-radius: .3em;
   padding: .3em .5em .3em .5em;
@@ -241,4 +241,51 @@ a:hover {
 a:visited {
   color: black;
   background-color: grey;
+}
+
+/*=========================================================================================*/
+/* PAGINATOR */
+
+.paginator {
+  background-color: #EDC951;
+  margin: 10px 0px;
+  line-height: 30px;
+  height: 2em;
+  width: 18em;
+  border: 0.1em solid grey;
+  border-radius: 0.3em;
+}
+ 
+.paginator .page_link, 
+.paginator .page_li,
+.paginator .page_ol {
+  float: left;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+ 
+.paginator .page_link {
+  color: #222;
+  padding: 0px 10px;
+  border-right: 1px solid grey;
+}
+ 
+.paginator .page_link:last-child:not(li) {
+  
+}
+ 
+.paginator .page_link.disabled {
+  color: #ccc;
+}
+ 
+.page_link .active {
+  background-color: grey;
+  color: white;
+}
+
+.page_link.hover {
+  background-color: cyan;
 }

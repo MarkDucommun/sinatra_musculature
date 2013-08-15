@@ -42,15 +42,15 @@ class HtmlHelper
   end
 
   def self.paginator(num_elements, base_directory, current_page)
-    paginator = "<div class='pagination'>' "
-    paginator += "<a href='#{base_directory}/#{current_page}" if current_page ==  1
-    paginator += "<a href='#{base_directory}/#{current_page - 1}" unless current_page == 1
-    paginator += "'>Previous</a><ol>"
+    paginator = "<div class='paginator'>' "
+    paginator += "<a class='page_link' href='#{base_directory}/#{current_page}" if current_page ==  1
+    paginator += "<a class='page_link' href='#{base_directory}/#{current_page - 1}" unless current_page == 1
+    paginator += "'>Previous</a><ol class='page_ol'>"
 
     num_elements.times do |i|
-      paginator += "<li><a href='#{base_directory}/#{current_page + 1}'" 
+      paginator += "<li class='page_li'><a class='page_link' href='#{base_directory}/#{current_page + 1}'" 
       paginator += " class='active'" if current_page == i + 1
-      paginator += "></a>#{current_page + 1}</li>"
+      paginator += ">" + (i + 1).to_s + "</a></li>"
     end
 
     paginator += "</ol><a href='#{base_directory}/#{current_page}" if current_page ==  num_elements
