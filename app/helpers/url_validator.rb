@@ -2,7 +2,7 @@ class UrlValidator < ActiveModel::EachValidator
   attr_accessor :url
 
   def validate_each(record, attribute, value)
-    self.url = record.long_url
+    self.url = value
     unless starts_properly && valid_uri
       record.errors[attribute] << (options[:message] || "is not a url")
     end

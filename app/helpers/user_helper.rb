@@ -28,4 +28,9 @@ class UserHelper
       end  
     end"
   end
+  
+  def self.user(id)
+    @user ||= User.find(id) if id
+    nil unless id
+  end
 end
